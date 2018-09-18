@@ -8,7 +8,7 @@ import telepot
 import Logger
 
 logger = Logger.Logger()
-paybot = telepot.Bot("692962436:AAHOeT1VqRcAboPEBEaJjYKRfvJ9Mj9xCMw")
+paybot = telepot.Bot("609295389:AAE3hBianx4PMwhd6UkdAC2TawKb2MpSZd4")
 
 
 def parse_handler(user_id, username, message):
@@ -27,7 +27,7 @@ def parse_handler(user_id, username, message):
 
     try:
         if command == "time":
-            paybot.sendMessage(user_id, getTime(), parse_mode= 'Markdown')  
+            paybot.sendMessage(user_id, getTime('Europe/Amsterdam', 'Canada/Mountain', 'Singapore'), parse_mode= 'Markdown')  
         else:
             paybot.sendMessage(user_id, "Invalid Command")
 
@@ -36,8 +36,8 @@ def parse_handler(user_id, username, message):
         logger.warning(e)
 
 
-def getTime(): 
-    return "*Shitian*: {} \n*Haozhe*: {} \n*Suyash*: {}".format(timeInTimezone('Europe/Amsterdam'), timeInTimezone('Canada/Mountain'), timeInTimezone('Singapore'))
+def getTime(a, b, c): 
+    return "*Shitian*: {} \n*Haozhe*: {} \n*Suyash*: {}".format(timeInTimezone(a), timeInTimezone(b), timeInTimezone(c))
 
 def timeInTimezone(timezone_name):
     from datetime import datetime
@@ -45,7 +45,7 @@ def timeInTimezone(timezone_name):
 
     zone = timezone(timezone_name)
     zone_time = datetime.now(zone)
-    return zone_time.strftime('%H:%m hours on %d/%m/%Y')
+    return zone_time.strftime('%H:%M hours on %d/%m/%Y')
 
 def message_admins(exception, user_id, username, message):
     print(message)

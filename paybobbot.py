@@ -5,7 +5,7 @@ from telepot.loop import MessageLoop
 from controllers.parse_message import parse_handler
 
 # Initial setup
-paybot = telepot.Bot("692962436:AAHOeT1VqRcAboPEBEaJjYKRfvJ9Mj9xCMw")
+paybot = telepot.Bot("609295389:AAE3hBianx4PMwhd6UkdAC2TawKb2MpSZd4")
 paybot.getUpdates(offset=100)
 
 def receiver(msg):
