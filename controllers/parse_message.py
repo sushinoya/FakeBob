@@ -26,7 +26,7 @@ def parse_handler(user_id, username, message):
     logger.command_run(message, username, user_id)
 
     try:
-        if command == "time":
+        if "time" in message:
             paybot.sendMessage(user_id, getTime('Europe/Amsterdam', 'Canada/Mountain', 'Singapore'), parse_mode= 'Markdown')  
         else:
             paybot.sendMessage(user_id, "Invalid Command")
